@@ -4,19 +4,28 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
+    
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
+    [SerializeField] AudioClip projectileSFX;
+    
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
+    GameSession gameSession;
     float gravityScaleAtStart;
     bool isAlive = true;
+
+    void Awake()
+    {
+        gameSession = FindObjectOfType<GameSession>();
+    }
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -34,12 +43,23 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         ClimbLadder();
         Die();
+    
     }
 
     void OnFire(InputValue value)
     {
+        
         if(!isAlive){return;}
+        if(gameSession.outOfBullet==true){return;}
+        
         Instantiate(bullet, gun.position, transform.rotation);
+        AudioSource.PlayClipAtPoint(projectileSFX, Camera.main.transform.position);
+        FindObjectOfType<GameSession>().BulletUsed();
+        
+        
+        
+        
+        
     }
     void OnMove(InputValue value)
     {

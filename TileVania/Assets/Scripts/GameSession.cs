@@ -7,12 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
+    [SerializeField] int bulletCount = 20;
     [SerializeField] int playerLives = 3;
     [SerializeField] int score = 0;
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI bulletCountText;
+    public bool outOfBullet=false;
+    
+    
+    
     void Awake()
     {
+        
         int numGameSessions = FindObjectsOfType<GameSession>().Length;
         if(numGameSessions > 1)
         {
@@ -28,6 +35,7 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
+        bulletCountText.text = bulletCount.ToString();
     }
 
     public void ProcessPlayerDeath()
@@ -62,4 +70,21 @@ public class GameSession : MonoBehaviour
         SceneManager.LoadScene(0);
         Destroy(gameObject);
     }
+    public void BulletUsed()
+    {
+        if(bulletCount==1){
+            outOfBullet=true;
+            bulletCount = 0;
+            bulletCountText.text = bulletCount.ToString();
+            return;}
+        bulletCount--;
+        bulletCountText.text = bulletCount.ToString();
+    }
+
+    public void BulletPickup()
+    {
+        bulletCount = bulletCount +3;
+        bulletCountText.text = bulletCount.ToString();
+    }
+    
 }
