@@ -13,12 +13,18 @@ public class GameSession : MonoBehaviour
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI bulletCountText;
-    public bool outOfBullet=false;
-    
+    [SerializeField] TextMeshProUGUI finalScoreText;
+    [SerializeField] Canvas ongoingCanvas;
+    [SerializeField] Canvas tryAgainCanvas;
+    public Canvas winCanvas;
+    public bool gameFinished = false;
+    public bool outOfBullet = false;
     
     
     void Awake()
     {
+        tryAgainCanvas.gameObject.SetActive(false);
+        winCanvas.gameObject.SetActive(false);
         
         int numGameSessions = FindObjectsOfType<GameSession>().Length;
         if(numGameSessions > 1)
@@ -37,7 +43,6 @@ public class GameSession : MonoBehaviour
         scoreText.text = score.ToString();
         bulletCountText.text = bulletCount.ToString();
     }
-
     public void ProcessPlayerDeath()
     {
         if(playerLives > 1)
@@ -46,7 +51,8 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            ResetGameSession();
+            ongoingCanvas.gameObject.SetActive(false);
+            tryAgainCanvas.gameObject.SetActive(true);
         }
     }
 
@@ -64,7 +70,7 @@ public class GameSession : MonoBehaviour
         livesText.text = playerLives.ToString();
     }
 
-    void ResetGameSession()
+    public void ResetGameSession()
     {
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(0);
@@ -83,8 +89,18 @@ public class GameSession : MonoBehaviour
 
     public void BulletPickup()
     {
-        bulletCount = bulletCount +3;
+        if(bulletCount == 0){outOfBullet=false;}
+        bulletCount = bulletCount + 3;
         bulletCountText.text = bulletCount.ToString();
+    }
+    
+    public void TotalScore()
+    {
+        int bulletScore = bulletCount*100;
+        int liveScore = playerLives*500;
+        int finalScore = score + bulletScore + liveScore;
+        finalScoreText.text = "Final Score = " + score.ToString() + " + " + playerLives.ToString() + " x 500 + " + bulletCount.ToString() + " x 100 = " + finalScore.ToString();
+        
     }
     
 }

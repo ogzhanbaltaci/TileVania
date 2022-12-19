@@ -18,14 +18,8 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
-    GameSession gameSession;
     float gravityScaleAtStart;
     bool isAlive = true;
-
-    void Awake()
-    {
-        gameSession = FindObjectOfType<GameSession>();
-    }
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -43,27 +37,21 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         ClimbLadder();
         Die();
-    
     }
 
     void OnFire(InputValue value)
-    {
-        
+    {    
         if(!isAlive){return;}
-        if(gameSession.outOfBullet==true){return;}
-        
+        if(FindObjectOfType<GameSession>().outOfBullet==true){return;}
+        if(FindObjectOfType<GameSession>().gameFinished ==true){return;}
         Instantiate(bullet, gun.position, transform.rotation);
         AudioSource.PlayClipAtPoint(projectileSFX, Camera.main.transform.position);
-        FindObjectOfType<GameSession>().BulletUsed();
-        
-        
-        
-        
-        
+        FindObjectOfType<GameSession>().BulletUsed();      
     }
     void OnMove(InputValue value)
     {
         if(!isAlive){return;}
+        if(FindObjectOfType<GameSession>().gameFinished ==true){return;}
         moveInput = value.Get<Vector2>();
         
     }
@@ -71,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     void OnJump(InputValue value)
     {
         if(!isAlive){return;}
+        if(FindObjectOfType<GameSession>().gameFinished ==true){return;}
         if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
             return;
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] int pointsForEnemyKilled = 200;
     Rigidbody2D myRigidbody;
     PlayerMovement player;
     float xSpeed;
@@ -25,6 +26,7 @@ public class Bullet : MonoBehaviour
         if(other.tag == "Enemy")
         {
             Destroy(other.gameObject);
+            FindObjectOfType<GameSession>().AddToScore(pointsForEnemyKilled);
         }
         Destroy(gameObject);
     }

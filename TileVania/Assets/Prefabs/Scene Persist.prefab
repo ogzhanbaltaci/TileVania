@@ -312,11 +312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532619286781902475, guid: def86e3b8a2403840bd4bb2e03a74068, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.3456
+      value: -1.93
       objectReference: {fileID: 0}
     - target: {fileID: 5532619286781902475, guid: def86e3b8a2403840bd4bb2e03a74068, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.638
+      value: 5.21
       objectReference: {fileID: 0}
     - target: {fileID: 5532619286781902475, guid: def86e3b8a2403840bd4bb2e03a74068, type: 3}
       propertyPath: m_LocalPosition.z
@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7996566056663444858, guid: def86e3b8a2403840bd4bb2e03a74068, type: 3}
       propertyPath: m_Name
-      value: AmmoPickup
+      value: BulletPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: def86e3b8a2403840bd4bb2e03a74068, type: 3}
