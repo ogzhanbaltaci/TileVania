@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6106833072621086249}
   - component: {fileID: 3091834289659097325}
   - component: {fileID: 6599820617909859115}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4657525014916198102}
   - component: {fileID: 1220653262884344932}
   - component: {fileID: 8944713013685401768}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayAgain Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,17 +163,17 @@ RectTransform:
   m_GameObject: {fileID: 5276791562042743686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9751, y: 2.0036752, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6106833072621086249}
   m_Father: {fileID: 3261692638792837068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.7, y: -13.7}
-  m_SizeDelta: {x: 201.0906, y: 59.926}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -2, y: -200}
+  m_SizeDelta: {x: 207.6125, y: -1139.7334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4657525014916198102
 CanvasRenderer:
@@ -280,8 +280,8 @@ GameObject:
   - component: {fileID: 4740731677750112442}
   - component: {fileID: 7533277009514841297}
   - component: {fileID: 3095617223026837198}
-  m_Layer: 0
-  m_Name: Score Text
+  m_Layer: 5
+  m_Name: Final Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.3, y: 52.3}
-  m_SizeDelta: {x: 275.7156, y: 65.768}
+  m_AnchoredPosition: {x: 5.5097, y: 40.279}
+  m_SizeDelta: {x: 798.6497, y: 83.632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7533277009514841297
 CanvasRenderer:
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sss
+  m_text: 999999999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 155ac7c2ec5f35c499842d7b6d8561f6, type: 2}
   m_sharedMaterial: {fileID: -7428116257343881078, guid: 155ac7c2ec5f35c499842d7b6d8561f6, type: 2}
@@ -362,15 +362,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4566607228176386332}
   - component: {fileID: 4115978764150675380}
   - component: {fileID: 7437377268184318039}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,10 +478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

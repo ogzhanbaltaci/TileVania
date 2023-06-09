@@ -15865,6 +15865,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Session
       objectReference: {fileID: 0}
+    - target: {fileID: 4708923944877882664, guid: 7f2f0ef4d4b9cd24fbaa3d0470e2ff9a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708923944877882664, guid: 7f2f0ef4d4b9cd24fbaa3d0470e2ff9a, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708923944877882664, guid: 7f2f0ef4d4b9cd24fbaa3d0470e2ff9a, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2f0ef4d4b9cd24fbaa3d0470e2ff9a, type: 3}
 --- !u!1001 &6486447430508144060
@@ -15977,7 +15989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950009173077609449, guid: d812aee990bd0c74ab6810ce68e168a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.431836
+      value: -10.299968
       objectReference: {fileID: 0}
     - target: {fileID: 6950009173077609449, guid: d812aee990bd0c74ab6810ce68e168a1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16060,6 +16072,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 482592669043147585, guid: 7c66a7b1909fccd428840c9423dc5ed1, type: 3}
+      propertyPath: m_Volume
+      value: 0.186
+      objectReference: {fileID: 0}
+    - target: {fileID: 482592669043147585, guid: 7c66a7b1909fccd428840c9423dc5ed1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482592669043147585, guid: 7c66a7b1909fccd428840c9423dc5ed1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1985233925585818792, guid: 7c66a7b1909fccd428840c9423dc5ed1, type: 3}
       propertyPath: jumpSpeed
       value: 17.08
